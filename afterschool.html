@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi Ecuelitas</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="icon" href="images/logo.png">
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+  	<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <link rel="stylesheet" href="webfonts/ostrich-sans.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="musicbg"><canvas id="glscreen"></canvas></div>
+	<div id="navbar" class="slidedown">
+		<a href="index.html">
+            <div class="navig" id="logo">
+                <h1>MI <span>ESCUELITA</span></h1>
+                <p>Bilingual Day Care & Pre-School</p>
+            </div>
+        </a>
+		<div class="navig" id="register">
+			<a class="navig-link" href="register.html">REGISTER</a>
+		</div>
+		<div class="navig">
+			<a class="navig-link" href="contact.html">CONTACT</a>
+		</div>
+		<div class="navig">
+			<a class="navig-link" href="faculty.html">FACULTY & STAFF</a>
+		</div>
+		<div class="navig">
+			<a class="navig-link" href="about.html">ABOUT US</a>
+		</div>
+		<div class="navig" id="programs">
+			<a class="navig-link">PROGRAMS <strong><i class="fas fa-angle-down"></i></strong></a>
+			<div id="programdropdown">
+				<a href="infant.html">Infant Class (1-2 years)</a>
+                <a href="toddler.html">Toddler Class (2-3 years)</a>
+                <a href="preschool.html">Preschool Class (3-5 years)</a>
+                <a href="afterschool.html">After-school</a>
+			</div>
+		</div>
+	</div>
+    <script id="2d-fragment-shader" type="x-shader/x-fragment">// <![CDATA[
+          #ifdef GL_ES
+          precision mediump float;
+          #endif
+
+          #define PI 3.14159265359;
+
+          uniform vec2 u_resolution;
+          uniform vec2 u_mouse;
+          uniform float u_time;
+          uniform float u_xpos;
+          uniform float u_ypos;
+
+        vec3 mod289(vec3 x) {
+          return x - floor(x * (1.0 / 289.0)) * 289.0;
+        }
+
+        vec4 mod289(vec4 x) {
+          return x - floor(x * (1.0 / 289.0)) * 289.0;
+        }
+
+        vec4 permute(vec4 x) {
+             return mod289(((x*34.0)+1.0)*x);
+        }
+
+        vec4 taylorInvSqrt(vec4 r)
+        {
+          return 1.79284291400159 - 0.85373472095314 * r;
+        }
+
+        float snoise(vec3 v)
+          { 
+          const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
+          const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
+
+          vec3 i  = floor(v + dot(v, C.yyy) );
+          vec3 x0 =   v - i + dot(i, C.xxx) ;
+
+          vec3 g = step(x0.yzx, x0.xyz);
+          vec3 l = 1.0 - g;
+          vec3 i1 = min( g.xyz, l.zxy );
+          vec3 i2 = max( g.xyz, l.zxy );
+
+          vec3 x1 = x0 - i1 + C.xxx;
+          vec3 x2 = x0 - i2 + C.yyy;
+          vec3 x3 = x0 - D.yyy;
+
+          i = mod289(i); 
+          vec4 p = permute( permute( permute( 
+                     i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
+                   + i.y + vec4(0.0, i1.y, i2.y, 1.0 )) 
+                   + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
+
+          float n_ = 0.142857142857;
+          vec3  ns = n_ * D.wyz - D.xzx;
+
+          vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
+
+          vec4 x_ = floor(j * ns.z);
+          vec4 y_ = floor(j - 7.0 * x_ );
+
+          vec4 x = x_ *ns.x + ns.yyyy;
+          vec4 y = y_ *ns.x + ns.yyyy;
+          vec4 h = 1.0 - abs(x) - abs(y);
+
+          vec4 b0 = vec4( x.xy, y.xy );
+          vec4 b1 = vec4( x.zw, y.zw );
+
+          vec4 s0 = floor(b0)*2.0 + 1.0;
+          vec4 s1 = floor(b1)*2.0 + 1.0;
+          vec4 sh = -step(h, vec4(0.0));
+
+          vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;
+          vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;
+
+          vec3 p0 = vec3(a0.xy,h.x);
+          vec3 p1 = vec3(a0.zw,h.y);
+          vec3 p2 = vec3(a1.xy,h.z);
+          vec3 p3 = vec3(a1.zw,h.w);
+
+          vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
+          p0 *= norm.x;
+          p1 *= norm.y;
+          p2 *= norm.z;
+          p3 *= norm.w;
+
+          vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
+          m = m * m;
+          return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), 
+                                        dot(p2,x2), dot(p3,x3) ) );
+          }
+
+          void main() {
+            vec3 color2 = vec3(238.0/255.0,98.0/255.0,81.0/255.0);
+            vec3 color3 = vec3(93.0/255.0,198.0/255.0,239.0/255.0);
+            vec3 color4 = vec3(250.0/255.0,220.0/255.0,49.0/255.0);
+            vec3 color5 = vec3(48.0/255.0,249.0/255.0,166.0/255.0);
+            vec3 color6 = vec3(100.0/255.0,205.0/255.0,96.0/255.0);
+            vec3 color1 = vec3(244.0/255.0,107.0/255.0,66.0/255.0);
+            vec2 lt = vec2(gl_FragCoord.x + u_xpos, gl_FragCoord.y + u_ypos);
+            vec2 st = lt.xy/u_resolution.xy;
+            st.x *= u_resolution.x/u_resolution.y;
+            vec3 color = vec3(0.0);
+            vec2 pos = vec2(st*0.6);
+            float DF = 0.0;
+            float a = 0.0;
+            vec2 vel = vec2(u_time*.1);
+            st.xy *= 0.4;
+            float r = snoise(vec3(st.x,st.y,u_time * 0.1));
+            if(r >= -1.0 && r < -0.6){
+              color = color1;
+            } else if(r >= -0.6 && r < -0.2){
+             color = color2;
+            } else if(r >= -0.2 && r < 0.2){
+              color = color3;
+            } else if(r >= 0.2 && r < 0.6){
+                 color = color4;
+            } else {
+              color = color5;
+            }
+            gl_FragColor = vec4(color,1.0);
+          }
+        </script>
+        <script id="2d-vertex-shader" type="x-shader/x-vertex">// <![CDATA[
+            attribute vec2 a_position;
+            void main() {
+                gl_Position = vec4(a_position, 0, 1);
+            }
+        </script>
+	<div class="programhead">
+        <h1 class="slideleft">After-School Class</h1>
+        <h3 class="slideup">2-8 Grade</h3>
+
+    </div>
+    <div class="programbody">
+        <h2 class="slideleft"><i>Schedules</i></h2>
+        <div class="border-bot scaler"></div>
+        <h4>Monday - Friday</h4>
+        <table class="table table-striped slideup">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Time</th>
+              <th scope="col">Class</th>
+              <th scope="col">Grade Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">3:30 - 4:30 PM</th>
+              <td>Spanish level I Beginners</td>
+              <td>2 - 5</td>
+            </tr>
+            <tr>
+              <th scope="row">4:45 - 5:45 PM</th>
+              <td>Spanish level I Beginners</td>
+              <td>6 - 8</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Saturday</h4>
+        <table class="table table-striped slideanim">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Time</th>
+              <th scope="col">Class</th>
+              <th scope="col">Grade Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">9:00 - 10:00 AM</th>
+              <td>Spanish level I</td>
+              <td>2 - 5</td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td>Spanish level I</td>
+              <td>6 - 8</td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td>Tutoring</td>
+              <td>2 - 8</td>
+            </tr>
+             <tr>
+              <th scope="row">10:15 - 11:15 AM</th>
+              <td>Spanish level II</td>
+              <td>6 - 8</td>
+            </tr>
+             <tr>
+              <th scope="row"></th>
+              <td>Spanish level II</td>
+              <td>6 - 8</td>
+            </tr>
+             <tr>
+              <th scope="row"></th>
+              <td>Tutoring</td>
+              <td>2 - 8</td>
+            </tr>
+            <tr>
+              <th scope="row">11:30 AM - 12:30 PM</th>
+              <td>Spanish level III</td>
+              <td>6 - 8</td>
+            </tr>
+             <tr>
+              <th scope="row"></th>
+              <td>Spanish level III</td>
+              <td>6 - 8</td>
+            </tr>
+             <tr>
+              <th scope="row"></th>
+              <td>Tutoring</td>
+              <td>2 - 8</td>
+            </tr>
+            <tr>
+              <th scope="row">1:15 - 2:15 PM</th>
+              <td>Spanish level I</td>
+              <td>3 - 8</td>
+            </tr>
+             <tr>
+              <th scope="row"></th>
+              <td>Tutoring</td>
+              <td>2 - 8</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div id="footer">
+        	<div class="row" id="footerlinks">
+        		<div class="col-sm-3">
+        		</div>
+        		<div class="col-sm-2">
+        			<a href="about.html">About Us</a>
+        		</div>
+        		<div class="col-sm-2">
+        			<a href="register.html">Register Today</a>
+        		</div>
+        		<div class="col-sm-2">
+        			<a href="contact.html">Contact Us</a>
+        		</div>
+        		<div class="col-sm-3"></div>
+        	</div>
+        	<div class="row" id="samyang">
+        		<p>&copy; Mi Escuelita 2019. Website design by <a href="https://www.samyang.xyz/">Sam Yang</a>.</p>
+        	</div>
+    </div>
+	<script src="js/index.js">
+    </script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi Ecuelitas</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="icon" href="images/logo.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+  	<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <link rel="stylesheet" href="webfonts/ostrich-sans.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+    	#navbar {
+    		background-color: transparent;
+    		box-shadow: 0px 0px 0px;
+    	}
+   </style>
+</head>
+<body id="indexbody">
+	<div id="navbar" class="slidedown">
+		<a href="index.html">
+			<div class="navig" id="logo">
+				<h1>MI <span>ESCUELITA</span></h1>
+				<p>Bilingual Day Care & Pre-School</p>
+			</div>
+		</a>
+		<div class="navig" id="register">
+			<a class="navig-link" href="register.html">REGISTER</a>
+		</div>
+		<div class="navig">
+			<a class="navig-link" href="contact.html">CONTACT</a>
+		</div>
+		<div class="navig">
+			<a class="navig-link" href="faculty.html">FACULTY & STAFF</a>
+		</div>
+		<div class="navig">
+			<a class="navig-link" href="about.html">ABOUT US</a>
+		</div>
+		<div class="navig" id="programs">
+			<a class="navig-link">PROGRAMS <strong><i class="fas fa-angle-down"></i></strong></a>
+			<div id="programdropdown">
+				<a href="infant.html">Infant Class (1-2 years)</a>
+				<a href="toddler.html">Toddler Class (2-3 years)</a>
+				<a href="preschool.html">Preschool Class (3-5 years)</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="phonenav">
+		<div id="menu" onclick="rotate(this)">
+		  <div class="bar1"></div>
+		  <div class="bar2"></div>
+		  <div class="bar3"></div>
+		</div>
+		<div id="phonenavlinks">
+			<div class="navig2" id="programs2">
+				<a class="navig-link2" onclick="toggleProg()">PROGRAMS <strong><i class="fas fa-angle-down"></i></strong></a>
+				<div id="programdropdown2">
+					<a href="infant.html">Infant Class (1-2 years)</a>
+					<a href="toddler.html">Toddler Class (2-3 years)</a>
+					<a href="preschool.html">Preschool Class (3-5 years)</a>
+				</div>
+			</div>
+			<div class="navig2"><a class="navig-link2" href="about.html">ABOUT US</a></div>
+			<div class="navig2"><a class="navig-link2" href="faculty.html">FACULTY & STAFF</a></div>
+			<div class="navig2"><a class="navig-link2" href="contact.html">CONTACT</a></div>
+			<div class="navig2"><a class="navig-link2" href="register.html">REGISTER</a></div>
+		</div>
+	</div>
+	
+	<div id="floatingsquare1"></div>
+	<div id="floatingsquare2"></div>
+	<div id="indexslides">
+		<div class="row">
+			<div class="col-md-5">
+				<h1 class="title slideleft" id="title1">Welcome to </h1><h1 class="title slideup"><strong>Mi Escuelita</strong><span> Child Development!</h1>
+				<a class="butt slideup" href="register.html">How to Register <i class="fas fa-angle-right"></i></a>
+			</div>
+			<div class="col-md-7">
+				<div id="carouselExampleFade" class="carousel slide carousel-fade scaler"  data-ride="carousel">
+				  <ol class="carousel-indicators">
+				    <li data-target="#carouselExampleFade" data-slide-to="0" class="active"></li>
+				    <li data-target="#carouselExampleFade" data-slide-to="1"></li>
+				    <li data-target="#carouselExampleFade" data-slide-to="2"></li>
+				    <li data-target="#carouselExampleFade" data-slide-to="3"></li>
+				    <li data-target="#carouselExampleFade" data-slide-to="4"></li>
+				    <li data-target="#carouselExampleFade" data-slide-to="5"></li>
+				    <li data-target="#carouselExampleFade" data-slide-to="6"></li>
+				    <li data-target="#carouselExampleFade" data-slide-to="7"></li>
+				  </ol>
+				  <div class="carousel-inner">
+				  	<div class="carousel-item active">
+				      <img src="images/girls1.jpg">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="images/boat2.jpg">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="images/main1.jpg">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="images/outdoors2.jpg">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="images/storytime.jpg">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="images/slide.jpg">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="images/boys3.png">
+				    </div>
+				    <div class="carousel-item">
+				      <img src="images/cards.jpg">
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+       </div>
+        <div id="info">
+        	<h1 class="slideanim2">What do we do?</h1>
+        	<div class="border-bot slidescale"></div>
+        	<p class="slideanim2">We welcome multicultural diversity in a <i>bilingual setting</i>.  Our approach engages children to learning key fundamentals across the major developmental areas.</p>
+        	<div class="row" id="develop-cat">
+        		<div class="col-md-3">
+        			<div class="cat  slideanim" id="cat1">
+	        			<div class="cat-head">
+		        			<i class="fas fa-brain"></i>
+		        			<h3>Language & Cognitive Development</h3>
+		        		</div>
+		        		<div class="cat-body">
+		        			<p>Listening</p>
+		        			<p>Speaking</p>
+		        			<p>Alphabet</p>
+		        			<p>Counting</p>
+		        			<p>Spanish language immersion</p>
+		        		</div>
+		        	</div>
+        		</div>
+        		<div class="col-md-3">
+        			<div class="cat slideanim" id="cat2">
+	        			<div class="cat-head">
+		        			<i class="fas fa-cloud-sun"></i>
+		        			<h3>Physical Health & Well- Being Development</h3>
+		        		</div>
+		        		<div class="cat-body">
+		        			<p>Gross motor skills</p>
+							<p>Fine motor skills</p>
+							<p>Sensory stimulation</p>
+							<p>LOTS of outdoor play</p>
+		        		</div>
+		        	</div>
+        		</div>
+        		<div class="col-md-3">
+        			<div class="cat slideanim" id="cat3">
+	        			<div class="cat-head">
+		        			<i class="fas fa-smile-beam"></i>
+		        			<h3>Emotional Development</h3>
+		        		</div>
+		        		<div class="cat-body">
+		        			<p>Learn to name feelings</p>
+							<p>Learn to identify facial expressions</p>
+							<p>Learn to verbalize own feelings</p>
+		        		</div>
+		        	</div>
+        		</div>
+        		<div class="col-md-3">
+        			<div class="cat slideanim" id="cat4">
+	        			<div class="cat-head">
+		        			<i class="fas fa-user-friends"></i>
+		        			<h3>Social Competence Development</h3>
+		        		</div>
+		        		<div class="cat-body">
+		        			<p>Conflict/problem solving</p>
+							<p>Interpersonal development through books</p>
+							<p>Model acceptable/alternative behavior</p>
+		        		</div>
+		        	</div>
+        		</div>
+        	</div>
+        	<p class="slideanim2" id="para2">With rich diversity in <i>art, music, and dramatic play</i>, we do our best to ensure that your child will be prepared for school.</p>
+        	<div class="row">
+        		<div class="col-sm-6">
+        			<a class="butt slideanim" href="about.html">Read More About Us <i class="fas fa-angle-right"></i></a>
+        		</div>
+        		<div class="col-sm-6">
+        			<a class="butt slideanim" href="faculty.html">Meet Our Passionate Staff <i class="fas fa-angle-right"></i></a>
+        		</div>
+        	</div>
+        </div>
+        <div id="location">
+        	<h1 class="slideanim">Location</h1>
+        	<div class="border-bot slidescale"></div>
+        	<h3 class="slideanim">1112 Hollyhead lane, Cupertino CA, 95014</h3>
+        	<div class="mapouter"><div class="gmap_canvas slideanim"><iframe width="1080" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=1112%20Hollyhead%20lane%2C%20Cupertino%2C%2095014&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:500px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style></div>
+        </div>
+        <div id="footer">
+        	<div class="row" id="footerlinks">
+        		<div class="col-sm-3">
+        		</div>
+        		<div class="col-sm-2">
+        			<a href="about.html">About Us</a>
+        		</div>
+        		<div class="col-sm-2">
+        			<a href="register.html">Register Today</a>
+        		</div>
+        		<div class="col-sm-2">
+        			<a href="contact.html">Contact Us</a>
+        		</div>
+        		<div class="col-sm-3"></div>
+        	</div>
+        	<div class="row" id="samyang">
+        		<p>&copy; Mi Escuelita 2019. Website design by <a href="https://www.samyang.xyz/">Sam Yang</a>.</p>
+        	</div>
+        </div>
+
+    <script>
+    	$(window).scroll(function() {
+		    if($(this).scrollTop() > 30) {
+		        $("#navbar").css('background-color', 'white')
+		        $("#navbar").css('box-shadow', '0 1px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)')
+		    } else {
+		        $("#navbar").css('background-color', 'transparent')
+		        $("#navbar").css('box-shadow', '0px 0px 0px')
+		    }
+		 });
+    	$(document).ready(function() {
+    		$(".gmap_canvas iframe").attr('width', $(window).width());
+    	});
+    </script>
+	<script src="js/index.js">
+    </script>
+</body>
+</html>
+
+
+
+
+

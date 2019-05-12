@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi Ecuelitas</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="icon" href="images/logo.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+  	<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <link rel="stylesheet" href="webfonts/ostrich-sans.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div id="navbar" class="slidedown">
+		<a href="index.html">
+			<div class="navig" id="logo">
+				<h1>MI <span>ESCUELITA</span></h1>
+				<p>Bilingual Day Care & Pre-School</p>
+			</div>
+		</a>
+		<div class="navig" id="register">
+			<a class="navig-link" href="register.html">REGISTER</a>
+		</div>
+		<div class="navig">
+			<a class="navig-link" href="contact.html">CONTACT</a>
+		</div>
+		<div class="navig">
+			<a class="navig-link" href="faculty.html">FACULTY & STAFF</a>
+		</div>
+		<div class="navig">
+			<a class="navig-link" href="about.html">ABOUT US</a>
+		</div>
+		<div class="navig" id="programs">
+			<a class="navig-link">PROGRAMS <strong><i class="fas fa-angle-down"></i></strong></a>
+			<div id="programdropdown">
+				<a href="infant.html">Infant Class (1-2 years)</a>
+				<a href="toddler.html">Toddler Class (2-3 years)</a>
+				<a href="preschool.html">Preschool Class (3-5 years)</a>
+			</div>
+		</div>
+	</div>
+
+    <div id="phonenav">
+        <div id="menu" onclick="rotate(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <div id="phonenavlinks">
+            <div class="navig2" id="programs2">
+                <a class="navig-link2" onclick="toggleProg()">PROGRAMS <strong><i class="fas fa-angle-down"></i></strong></a>
+                <div id="programdropdown2">
+                    <a href="infant.html">Infant Class (1-2 years)</a>
+                    <a href="toddler.html">Toddler Class (2-3 years)</a>
+                    <a href="preschool.html">Preschool Class (3-5 years)</a>
+                </div>
+            </div>
+            <div class="navig2"><a class="navig-link2" href="about.html">ABOUT US</a></div>
+            <div class="navig2"><a class="navig-link2" href="faculty.html">FACULTY & STAFF</a></div>
+            <div class="navig2"><a class="navig-link2" href="contact.html">CONTACT</a></div>
+            <div class="navig2"><a class="navig-link2" href="register.html">REGISTER</a></div>
+        </div>
+    </div>
+
+	<div id="regimage">
+      <img src="images/toys2.jpg">
+    </div>
+	  <div id="reghead">
+        <h1 class="slideleft">How to Register for Mi Escuelita</h1>
+        <div class="border-bot scaler"></div>
+    </div>
+    <div id="regbody">
+    	<h3>1. <a href="contact.html">Contact Us</a> To Schedule a Tour of Our Facilities</h3>
+    	<p>Phone is preferred.</p>
+    	<h3>
+    	<h3>2. Read/Fill Out The Required Forms</h3>
+    	<p>You can fill them out online and email us the completed forms, or print them out and bring a hard copy to your tour.</p>
+    	<div class="row">
+    		<div class="col-md-2">
+    			<a href="forms/LIC700.pdf" class="regform">
+    				<i class="fas fa-file-pdf"></i>
+    				<p>LIC700: IDENTIFICATION AND EMERGENCY INFORMATION</p>
+    			</a>
+    		</div>
+    		<div class="col-md-2">
+    			<a href="forms/LIC702.pdf" class="regform">
+    				<i class="fas fa-file-pdf"></i>
+    				<p>LIC702: CHILD’S PREADMISSION HEALTH HISTORY</p>
+    			</a>
+    		</div>
+    		<div class="col-md-2">
+    			<a href="forms/LIC627C.pdf" class="regform">
+    				<i class="fas fa-file-pdf"></i>
+    				<p>LIC627C: CONSENT FOR EMERGENCY MEDICAL TREATMENT</p>
+    			</a>
+    		</div>
+    		<div class="col-md-2">
+    			<a href="forms/LIC995A.pdf" class="regform">
+    				<i class="fas fa-file-pdf"></i>
+    				<p>LIC995A: ACKNOWLEDGEMENT OF PARENTS’ RIGHTS </p>
+    			</a>
+    		</div>
+    		<div class="col-md-2">
+    			<a href="forms/LIC995E.pdf" class="regform">
+    				<i class="fas fa-file-pdf"></i>
+    				<p>LIC995E: IMPORTANT INFORMATION FOR PARENTS</p>
+    			</a>
+    		</div>
+    		<div class="col-md-2">
+    			<a href="forms/LIC9212.pdf" class="regform">
+    				<i class="fas fa-file-pdf"></i>
+    				<p>LIC9212: FCC - CONSUMER AWARENESS INFORMATION</p>
+    			</a>
+    		</div>
+    	</div>
+    </div>
+        <div id="footer">
+        	<div class="row" id="footerlinks">
+        		<div class="col-sm-3">
+        		</div>
+        		<div class="col-sm-2">
+        			<a href="about.html">About Us</a>
+        		</div>
+        		<div class="col-sm-2">
+        			<a href="register.html">Register Today</a>
+        		</div>
+        		<div class="col-sm-2">
+        			<a href="contact.html">Contact Us</a>
+        		</div>
+        		<div class="col-sm-3"></div>
+        	</div>
+        	<div class="row" id="samyang">
+        		<p>&copy; Mi Escuelita 2019. Website design by <a href="https://www.samyang.xyz/">Sam Yang</a>.</p>
+        	</div>
+        </div>
+	<script src="js/index.js">
+    </script>
+</body>
+</html>
+
+
+
+
+
