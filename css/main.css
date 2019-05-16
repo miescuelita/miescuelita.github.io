@@ -1171,8 +1171,12 @@ td {
 	/*homepage*/
 	body {
 		width: 100%;
-		overflow-x: hidden;
 		position: relative;
+	}
+
+	html, body {
+	    max-width: 100%;
+	    overflow-x: hidden;
 	}
 
 	p {
