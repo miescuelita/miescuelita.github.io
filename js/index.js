@@ -1,26 +1,47 @@
-$(document).ready(function() {
+slideAnim = () => {
+    //working slide animation with DELAYS controlled
+    const scrollTop = $(window).height()*0.9
+    const slideThis = (object, func) => {
+        let pos = object.offset().top, winTop = $(window).scrollTop()
+        if (pos <= winTop + scrollTop) {
+            if(object.attr('class').includes('delay1')) 
+                $(function() {setInterval(func, 300)})
+            else if(object.attr('class').includes('delay2')) 
+                $(function() {setInterval(func, 600)})
+            else if(object.attr('class').includes('delay3')) 
+                $(function() {setInterval(func, 900)})
+            else
+                func()
+        }
+    }
+    $(".slideanim").each(function() {
+        const slide = () => $(this).addClass("slideup")
+        slideThis($(this), slide)
+    })
+    $(".slideanim2").each(function() {
+        const slide = () => $(this).addClass("slideleft")
+        slideThis($(this), slide)
+    })
+    $(".slidescale").each(function() {
+        const slide = () => $(this).addClass("scaler")
+        slideThis($(this), slide)
+    })
+}
+
+$(document).ready(function() { 
+    slideAnim()
     $("#programs").mouseenter(function(event) {
         $("#programdropdown").slideDown("fast");
         $("#programs .navig-link .fa-angle-down").css('transform', 'rotate(180deg)');
-    });
+    })
     $("#programs").mouseleave(function(event) {
         $("#programdropdown").slideUp("fast");
         $("#programs .navig-link .fa-angle-down").css('transform', 'rotate(0deg)');
-    });
+    })
 
     setTimeout("$(\".title strong\").css(\'text-shadow\', \'4px 2px 0px #62ea6d\')", 500);
     setTimeout("$(\"#phhead h1 strong\").css(\'text-shadow\', \'4px 2px 0px #ee5c51\')", 500);
-
-    if($(window).width() > 768) {
-        $("#backtitle3").css('top', $("#ourmission .title").offset().top - $("#phbody").offset().top - 50);
-        $("#backtitle2").css('top', $("#ourhistory .title").offset().top - $("#phbody").offset().top - 50);
-        $("#backtitle1").css('top', $("#ourphilosophy").offset().top - $("#phbody").offset().top - 30);
-    } else {
-        $("#backtitle3").css('top', $("#ourmission .title").offset().top - $("#phbody").offset().top);
-        $("#backtitle2").css('top', $("#ourhistory .title").offset().top - $("#phbody").offset().top);
-        $("#backtitle1").css('top', $("#ourphilosophy .title").offset().top - $("#phbody").offset().top + 30);
-    }
-});
+})
 
 function rotate(x) {
     x.classList.toggle("change");
@@ -28,59 +49,30 @@ function rotate(x) {
 }
 
 $(window).scroll(function() {
-    $("#floatingsquare1").css({
-        'margin-top': $(this).scrollTop()/6
-    });
+    if($(window).width() > 768) {
+        $("#floatingsquare3").css({
+            'margin-top': $(this).scrollTop()/6
+        })
 
-     $("#topo").css({
-        'margin-top': $(this).scrollTop()/6
-    });
-
-    $("#floatingsquare3").css({
-        'margin-top': $(this).scrollTop()/6
-    });
-
-    $("#floatingsquare2").css({
-        'margin-top': -$(this).scrollTop()/8
-    });
-
-    $("#phimage").css({
-        'margin-top': $(this).scrollTop()/4
-    });
+        $("#floatingsquare2").css({
+            'margin-top': -$(this).scrollTop()/8
+        })
+        $("#floatingsquare1").css({
+            'margin-top': $(this).scrollTop()/6
+        })
+    }
+    $("#topo").css({
+        'margin-top': $(this).scrollTop()/15
+    })
     $("#regimage").css({
-        'margin-top': $(this).scrollTop()/4
-    });
+        'margin-top': $(this).scrollTop()/10
+    })
 
     $("#facultyimg").css({
-        'margin-top': $(this).scrollTop()/4
-    });
+        'margin-top': $(this).scrollTop()/10
+    })
 
-    $(".slideanim").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos <= winTop + 600) {
-          $(this).addClass("slideup");
-        }
-    });
-
-    $(".slideanim2").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos <= winTop + 600) {
-          $(this).addClass("slideleft");
-        }
-    });
-
-    $(".slidescale").each(function(){
-      var pos = $(this).offset().top;
-
-      var winTop = $(window).scrollTop();
-        if (pos <= winTop + 600) {
-          $(this).addClass("scaler");
-        }
-    });
+    slideAnim()
 });
 
 var canvas, gl; // canvas and webgl context
@@ -176,15 +168,7 @@ window.addEventListener('resize', function(event){
     canvas.height = window.innerHeight;
     gl.viewport(0, 0, window.innerWidth, window.innerHeight);
     locationOfResolution = gl.getUniformLocation(program, "u_resolution");
-    if($(window).width() > 768) {
-        $("#backtitle3").css('top', $("#ourmission .title").offset().top - $("#phbody").offset().top - 50);
-        $("#backtitle2").css('top', $("#ourhistory .title").offset().top - $("#phbody").offset().top - 50);
-        $("#backtitle1").css('top', $("#ourphilosophy").offset().top - $("#phbody").offset().top - 30);
-    } else {
-        $("#backtitle3").css('top', $("#ourmission .title").offset().top - $("#phbody").offset().top);
-        $("#backtitle2").css('top', $("#ourhistory .title").offset().top - $("#phbody").offset().top);
-        $("#backtitle1").css('top', $("#ourphilosophy .title").offset().top - $("#phbody").offset().top + 30);
-    }
+    resize()
 });
 
 function toggleProg() {

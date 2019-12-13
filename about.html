@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mi Ecuelitas</title>
+	<title>About Mi Escuelita</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+  <meta name="description" content="We believe that every child is unique and can succeed.">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<link rel="icon" href="images/logo.png">
 	
@@ -20,30 +21,30 @@
 </head>
 <body>
 	<div id="navbar" class="slidedown">
-		<a href="index.html">
+		<a href="index">
             <div class="navig" id="logo">
                 <h1>MI <span>ESCUELITA</span></h1>
                 <p>Bilingual Day Care & Pre-School</p>
             </div>
         </a>
 		<div class="navig" id="register">
-			<a class="navig-link" href="register.html">REGISTER</a>
+			<a class="navig-link" href="register">REGISTER</a>
 		</div>
 		<div class="navig">
-			<a class="navig-link" href="contact.html">CONTACT</a>
+			<a class="navig-link" href="contact">CONTACT</a>
 		</div>
 		<div class="navig">
-			<a class="navig-link" href="faculty.html">FACULTY & STAFF</a>
+			<a class="navig-link" href="faculty">FACULTY & STAFF</a>
 		</div>
 		<div class="navig">
-			<a class="navig-link" href="about.html">ABOUT US</a>
+			<a class="navig-link" href="about">ABOUT US</a>
 		</div>
 		<div class="navig" id="programs">
 			<a class="navig-link">PROGRAMS <strong><i class="fas fa-angle-down"></i></strong></a>
 			<div id="programdropdown">
-				<a href="infant.html">Infant Class (1-2 years)</a>
-        <a href="toddler.html">Toddler Class (2-3 years)</a>
-        <a href="preschool.html">Preschool Class (3-5 years)</a>
+				<a href="infant">Infant Class (1-2 years)</a>
+        <a href="toddler">Toddler Class (2-3 years)</a>
+        <a href="preschool">Preschool Class (3-5 years)</a>
 			</div>
 		</div>
 	</div>
@@ -58,15 +59,15 @@
       <div class="navig2" id="programs2">
         <a class="navig-link2" onclick="toggleProg()">PROGRAMS <strong><i class="fas fa-angle-down"></i></strong></a>
         <div id="programdropdown2">
-          <a href="infant.html">Infant Class (1-2 years)</a>
-          <a href="toddler.html">Toddler Class (2-3 years)</a>
-          <a href="preschool.html">Preschool Class (3-5 years)</a>
+          <a href="infant">Infant Class (1-2 years)</a>
+          <a href="toddler">Toddler Class (2-3 years)</a>
+          <a href="preschool">Preschool Class (3-5 years)</a>
         </div>
       </div>
-      <div class="navig2"><a class="navig-link2" href="about.html">ABOUT US</a></div>
-      <div class="navig2"><a class="navig-link2" href="faculty.html">FACULTY & STAFF</a></div>
-      <div class="navig2"><a class="navig-link2" href="contact.html">CONTACT</a></div>
-      <div class="navig2"><a class="navig-link2" href="register.html">REGISTER</a></div>
+      <div class="navig2"><a class="navig-link2" href="about">ABOUT US</a></div>
+      <div class="navig2"><a class="navig-link2" href="faculty">FACULTY & STAFF</a></div>
+      <div class="navig2"><a class="navig-link2" href="contact">CONTACT</a></div>
+      <div class="navig2"><a class="navig-link2" href="register">REGISTER</a></div>
     </div>
   </div>
   
@@ -74,8 +75,8 @@
       <img src="images/boat1.jpg">
     </div>
 	  <div id="phhead">
-        <h1 class="slideleft">We Believe That Every Child Is <strong>Unique</strong> and Can Succeed.</h1>
-        <div class="border-bot scaler"></div>
+        <h1 class="slideanim2">We Believe That Every Child Is <strong>Unique</strong> and Can Succeed.</h1>
+        <div class="border-bot slidescale"></div>
     </div>
     <div id="phbody">
       <h1 class="backtitle slidescale" id="backtitle3"><img src="images/splatter1.png"></h1>
@@ -123,7 +124,7 @@
               <a class="butt slideanim" href="https://www.yelp.com/biz/mi-escuelita-cupertino-2?osq=mi+escuelitas">Check Us Out On Yelp <i class="fas fa-angle-right"></i></a>
             </div>
             <div class="col-sm-6">
-              <a class="butt slideanim" href="register.html">Register Today <i class="fas fa-angle-right"></i></a>
+              <a class="butt slideanim" href="register">Register Today <i class="fas fa-angle-right"></i></a>
             </div>
         </div>
       </div>
@@ -133,13 +134,13 @@
         		<div class="col-sm-3">
         		</div>
         		<div class="col-sm-2">
-        			<a href="about.html">About Us</a>
+        			<a href="about">About Us</a>
         		</div>
         		<div class="col-sm-2">
-        			<a href="register.html">Register Today</a>
+        			<a href="register">Register Today</a>
         		</div>
         		<div class="col-sm-2">
-        			<a href="contact.html">Contact Us</a>
+        			<a href="contact">Contact Us</a>
         		</div>
         		<div class="col-sm-3"></div>
         	</div>
@@ -149,8 +150,62 @@
             <p>Website design by <a href="https://www.samyang.xyz/">Sam Yang</a>.</p>
         	</div>
     </div>
-	<script src="js/index.js">
-    </script>
+
+  <script>
+    resize = () => {
+        if($(window).width() > 768) {
+            $("#backtitle3").css('top', $("#ourmission .title").offset().top - $("#phbody").offset().top - 50);
+            $("#backtitle2").css('top', $("#ourhistory .title").offset().top - $("#phbody").offset().top - 50);
+            $("#backtitle1").css('top', $("#ourphilosophy").offset().top - $("#phbody").offset().top - 30);
+        } else {
+            $("#backtitle3").css('top', $("#ourmission .title").offset().top - $("#phbody").offset().top);
+            $("#backtitle2").css('top', $("#ourhistory .title").offset().top - $("#phbody").offset().top);
+            $("#backtitle1").css('top', $("#ourphilosophy .title").offset().top - $("#phbody").offset().top + 30);
+        }
+    }
+    slideAnim = () => {
+      resize()
+      //working slide animation with DELAYS controlled
+      const scrollTop = $(window).height()*0.9
+      const slideThis = (object, func) => {
+          let pos = object.offset().top, winTop = $(window).scrollTop()
+          if (pos <= winTop + scrollTop) {
+              if(object.attr('class').includes('delay1')) 
+                  $(function() {setInterval(func, 300)})
+              else if(object.attr('class').includes('delay2')) 
+                  $(function() {setInterval(func, 600)})
+              else if(object.attr('class').includes('delay3')) 
+                  $(function() {setInterval(func, 900)})
+              else
+                  func()
+          }
+      }
+      $(".slideanim").each(function() {
+          const slide = () => $(this).addClass("slideup")
+          slideThis($(this), slide)
+      })
+      $(".slideanim2").each(function() {
+          const slide = () => $(this).addClass("slideleft")
+          slideThis($(this), slide)
+      })
+      $(".slidescale").each(function() {
+          const slide = () => $(this).addClass("scaler")
+          slideThis($(this), slide)
+      })
+    }
+    $(window).scroll(function() {
+      slideAnim()
+      $("#phimage").css({
+          'margin-top': $(this).scrollTop()/10
+      })
+    })
+    $(document).ready(function() { 
+      slideAnim()
+    })
+    window.addEventListener('resize', function(event){
+      resize()
+    })
+  </script>
 </body>
 </html>
 

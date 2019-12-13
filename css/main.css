@@ -4,12 +4,17 @@ body, h1, body, div, a, ol, ul, li, h2, p, em, img, button {
 	outline: 0;
 	font-family: 'Ostrich Sans';
 }
-
-body {
-	background-color: white;
-	width: 102%;
-	overflow-x: hidden;
-}
+html {
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  body {
+  	background-color: white;
+    margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
+  }
 
 /*
 yellow: gold
@@ -20,7 +25,7 @@ green: #62ea6d
 
 p {
 	font-family: 'Lato', sans-serif;
-	font-size: 22px;
+	font-size: 20px;
 	color: #666;
 }
 
@@ -164,10 +169,17 @@ h2, h3, h4 {
 	background-color: gold;
 }
 
+#indexhead {
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 #indexslides {
 	width: 88%;
 	margin: 150px 6% 100px 6%;
-	position: absolute;
+	position: relative;
 	top: 0;
 	left: 0;
 	z-index: 50;
@@ -279,10 +291,9 @@ h2, h3, h4 {
 }
 
 #info {
-	position: relative;
 	width: 100%;
-	top: 100vh;
 	padding: 30px 6% 50px 6%;
+	position: relative;
 	z-index: 60;
 }
 
@@ -339,18 +350,6 @@ h2, h3, h4 {
 	font-size: 19px;
 }
 
-#cat2 {
-	animation-duration: 1.1s;
-}
-
-#cat3 {
-	animation-duration: 1.6s;
-}
-
-#cat4 {
-	animation-duration: 2s;
-}
-
 #para2 {
 	margin-bottom: 30px;
 }
@@ -394,7 +393,6 @@ h2, h3, h4 {
 	color: white;
 	padding: 150px 7% 70px 7%;
 	position: relative;
-	top: 100vh;
 	z-index: 60;
 	clip-path: polygon(0% 8%, 100% 0%, 100% 100%, 0% 100%);
 }
@@ -404,20 +402,15 @@ h2, h3, h4 {
 }
 
 #footer {
-	background-color: #555;
+	background-color: #222;
 	text-align: center;
 	color: white;
 	position: relative;
 	z-index: 50;
 }
 
-#indexbody #footer {
-	position: relative;
-	top: 100vh;
-}
-
 #footerlinks {
-	padding: 30px 0px;
+	padding: 20px 0px 15px 0px;
 }
 
 #footerlinks a {
@@ -426,10 +419,13 @@ h2, h3, h4 {
 }
 
 #samyang {
-	background-color: #111;
+	background-color: #060606;
 	padding: 10px 1.5%;
 	display: block;
 	margin: auto;
+}
+#samyang p {
+	font-size: 18px;
 }
 
 #samyang a {
@@ -528,6 +524,7 @@ canvas {
 
 .thead-dark th {
 	font-size: 30px;
+	padding: 10px 0px 0px 20px;
 }
 
 .thead-dark {
@@ -1298,18 +1295,6 @@ td {
 		font-size: 17px;
 	}
 
-	#cat2 {
-		animation-duration: 1s;
-	}
-
-	#cat3 {
-		animation-duration: 1s;
-	}
-
-	#cat4 {
-		animation-duration: 1s;
-	}
-
 	#para2 {
 		margin-bottom: 30px;
 	}
@@ -1334,13 +1319,6 @@ td {
 	#footerlinks a {
 		font-size: 20px;
 		color: white;
-	}
-
-	#samyang {
-		background-color: #111;
-		padding: 10px 0px;
-		display: block;
-		margin: auto;
 	}
 
 	#samyang p {
