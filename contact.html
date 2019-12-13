@@ -23,7 +23,7 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
-  	<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Lato:300,500,700" rel="stylesheet">
     <link rel="stylesheet" href="webfonts/ostrich-sans.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -86,21 +86,41 @@
 			<h1>Get In Touch</h1>
 			<div class="border-bot scaler"></div>
 			<div class="row">
-				<div class="col-sm-6 slideleft">
+				<div class="col-md-6 slideanim2">
 					<div class="content">
-						<h3>Contact Info</h3>
-						<p><strong>Sofia Barboza</strong></p>
-						<p>Phone: (669) 292- 5339</p>
-						<p>Email: miescuelitacupertino@gmail.com</p>
-						<h3 style="padding-top: 20px;">Check Us Out On Yelp</h3>
-						<a class="butt slideup" href="https://www.yelp.com/biz/mi-escuelita-cupertino-2?osq=mi+escuelitas" id="yelp">Yelp <i class="fab fa-yelp"></i> <i class="fas fa-angle-right"></i></a>
+						<h3>Send Us A Message!</h3>
+						<p>Schedule a tour, ask a question or submit a testimony.</p>
+						<form id="contact-form">
+	                        <label>Name</label>
+	                        <input type="text" class="form-control" id="message_name" placeholder="please enter your name..."/>
+	                        <label>Email</label>
+	                        <input type="email" id="message_email" class="form-control" placeholder="please enter an email address we can reach you at..."/>
+	                        <label>Topic</label>
+	                        <select class="form-control" id="message_topic">
+	                        	<option>Select</option>
+							    <option>Schedule a Tour</option>
+							    <option>Ask a Question</option>
+							    <option>Submit a Testimony</option>
+							    <option>Other...</option>
+							 </select>
+	                        <label id="">Message</label>
+	                        <textarea type="text" id="message_msg" class="form-control" resize="none" rows='3' placeholder="If scheduling a tour, enter your desired date and time..."></textarea>
+	                        <br>
+	                        <button  type="submit" id="submit-message" class="butt">Send Message <i class="fas fa-share fa-icon"></i></button>
+	                        <p id="form-errors"></p>
+	                    </form>
 					</div>
 				</div>
-				<div class="col-sm-6 slideup">
+				<div class="col-md-6 slideanim">
 					<div class="content">
-						<h3>Location</h3>
-						<p>1112 Hollyhead lane, Cupertino CA, 95014</p>
-						<div class="mapouter"><div class="gmap_canvas slideup"><iframe width="1080" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=1112%20Hollyhead%20lane%2C%20Cupertino%2C%2095014&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:300px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:100%;}</style></div>
+						<h3>Contact Info</h3>
+						<p><strong><i class="fas fa-angle-right"></i> Sofia Barboza, Director</strong></p>
+						<p>Phone: (669) 292- 5339</p>
+						<p>Email: miescuelitacupertino@gmail.com</p>
+						<p><strong><i class="fas fa-angle-right"></i> Sam Yang, Webmaster</strong></p>
+						<p>Email: samuel.q.yang@gmail.com</p>
+						<h3 style="padding-top: 20px;">Check Us Out On Yelp</h3>
+						<a class="butt slideup" href="https://www.yelp.com/biz/mi-escuelita-cupertino-2?osq=mi+escuelitas" id="yelp">Yelp <i class="fab fa-yelp"></i> <i class="fas fa-angle-right"></i></a>
 					</div>
 				</div>
 			</div>

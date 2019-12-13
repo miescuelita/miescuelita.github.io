@@ -53,7 +53,7 @@ h2, h3, h4 {
 	left: 0;
 	z-index: 99;
 	background-color: white;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 	transition-duration: 0.3s;
 	padding-right: 116px;
 }
@@ -253,7 +253,7 @@ h2, h3, h4 {
 	height: 500px;
 	overflow: hidden;
 	background-color: black;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.12), 0 2px 5px rgba(0,0,0,0.24);
+	box-shadow: 0 2px 20px rgba(0,0,0,0.2);
 }
 
 #carouselExampleFade img {
@@ -318,7 +318,7 @@ h2, h3, h4 {
 	margin: 0px 2%;
 	width: 96%;
 	padding: 0;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 0 10px rgba(0,0,0,0.08);
 }
 
 .cat-head {
@@ -347,7 +347,6 @@ h2, h3, h4 {
 #info .cat-body p {
 	padding: 5px 0px 5px 20px;
 	text-align: left;
-	font-size: 19px;
 }
 
 #para2 {
@@ -365,15 +364,16 @@ h2, h3, h4 {
 	color: white;
 	border-radius: 30px;
 	background: linear-gradient(60deg,  gold 50%, #ee5c51 50%);
-	box-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 0 5px rgba(0,0,0,0.12);
 	background-size: 300%;
 	background-position: right;
+	outline: 0
 }
 
 .butt:hover {
 	color: white;
 	background-position: left;
-	box-shadow: 0 5px 10px rgba(0,0,0,0.12), 0 5px 10px rgba(0,0,0,0.24);
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
 	text-decoration: none;
 }
 
@@ -500,10 +500,6 @@ canvas {
 	padding-bottom: 20px;
 }
 
-.programbody p {
-	font-size: 20px;
-}
-
 .programbody hr {
 	margin-bottom: 40px;
 }
@@ -605,7 +601,6 @@ td {
 
 
 #phbody p {
-	font-size: 22px;
 	padding: 10px 0px;
 }
 
@@ -656,7 +651,7 @@ td {
 	color: #5dc6ef;
 }
 
-#phbody .col-sm-8 a {
+#phbody .col-lg-8 a {
 	font-family: 'Lato';
 	color: #ee5c51;
 }
@@ -682,12 +677,12 @@ td {
 }
 
 #topo img {
-	filter: brightness(1.7);
+	filter: brightness(1.3);
 }
 
 #contactbody {
 	position: relative;
-	padding: 140px 6% 50px 6%;
+	padding: 25vh 6% 50px 6%;
 }
 
 #contactbody h1 {
@@ -701,18 +696,18 @@ td {
 	margin: 0px auto 30px auto;
 }
 
-#contactbody .row .col-sm-6 .content {
+#contactbody .row .col-md-6 .content {
 	padding: 30px 6%;
-	background-color: #fbfbfb;
+	background-color: #fdfdfd;
 	margin: 0px 1%;
 	height: 100%;
 	border-radius: 10px;
-	box-shadow: 0 1px 0px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 0 7px rgba(0,0,0,0.08);
 
 }
 
 #contactbody h3 {
-	padding: 5px 0px;
+	padding: 5px 0px 0px 0px;
 	font-size: 40px;
 }
 
@@ -722,8 +717,38 @@ td {
 }
 
 #contactbody p {
-	font-size: 22px;
 	padding: 5px 0px;
+}
+
+#contact-form {
+	font-family: 'Lato'
+}
+
+#contact-form label {
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: #888;
+	margin: 0;
+	padding: 5px 0px 0px 0px;
+
+}
+
+#contact-form .form-control {
+	margin: 0px 0px 15px 0px;
+	padding: 2px 10px 5px 10px;
+	border: 0;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.05);
+	transition-delay: 0.2s;
+}
+#contact-form .form-control:focus {
+	box-shadow: 0px 0px 10px rgba(0,50,200,0.2);
+}
+
+#form-errors {
+	font-size: 16px;
+	padding: 10px 0px;
 }
 
 #yelp {
@@ -772,10 +797,6 @@ td {
 	padding: 0px 3%;
 }
 
-.faculty p {
-	font-size: 20px;
-}
-
 .faculty h1 {
 	font-size: 50px;
 }
@@ -788,7 +809,7 @@ td {
 .faculty img {
 	width: 100%;
 	margin-top: -50px;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
 /*Register*/
@@ -805,7 +826,6 @@ td {
 }
 
 #regbody p {
-	font-size: 20px;
 	margin-top: -15px;
 }
 
@@ -842,7 +862,7 @@ td {
 	color: white;
 	text-decoration: none;
 	background-position: left;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 	transform: translateY(-2px);
 }
 
@@ -968,9 +988,9 @@ td {
     }
   }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
 	p {
-		font-size: 20px;
+		font-size: 18px;
 	}
 
 	h1 {
@@ -1161,6 +1181,14 @@ td {
 		font-size: 22px;
 		padding: 10px 20px 6px 20px;
 	}
+
+	#ourphilo {
+		display: none;
+	}
+
+	#ourphilophone {
+		display: block;
+	}
 }
 
 
@@ -1177,7 +1205,7 @@ td {
 	}
 
 	p {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	h1 {
@@ -1391,14 +1419,6 @@ td {
 
 	/*About*/
 
-	#ourphilo {
-		display: none;
-	}
-
-	#ourphilophone {
-		display: block;
-	}
-
 	#phhead, #facultyhead, #reghead {
 		padding: 120px 5% 80px 5%;
 	}
@@ -1483,7 +1503,7 @@ td {
 
 	#contactbody {
 		position: relative;
-		padding: 120px 5% 30px 5%;
+		padding: 15vh 5% 30px 5%;
 	}
 
 	#contactbody h1 {
@@ -1495,22 +1515,24 @@ td {
 		margin: 0px auto 10px auto;
 	}
 
-	#contactbody .row .col-sm-6 {
+	#contactbody .row .col-md-6 {
 		margin: 20px 0px;
 	}
 
 	#contactbody h3 {
-		padding: 5px 0px;
 		font-size: 25px;
 	}
 
 	#contactbody strong {
 		color: #5dc6ef;
-		font-size: 20px;
+		font-size: 18px;
+	}
+
+	#contact-form label {
+		font-size: 10px;
 	}
 
 	#contactbody p {
-		font-size: 18px;
 		padding: 5px 0px;
 	}
 

@@ -176,7 +176,50 @@ function toggleProg() {
     $("#programs2 .navig-link2 .fa-angle-down").toggleClass('rotate180');
 }
 
+const url = 'https://script.google.com/macros/s/AKfycbzr5pWKH-IoJKRQ4NlCw9eAh5josncR3Nof6xyvHiLOKfVyHQ/exec'
 
+$('#submit-message').on('click', function(e) {
+    e.preventDefault()
+    const name = $("#message_name").val()
+    const email = $("#message_email").val()
+    const topic = $("#message_topic").val()
+    const message = $("#message_msg").val()
+    let errors = []
+    if(name.length == 0) 
+        errors.push('name')
+    if(!/^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/.test(email))
+        errors.push("valid email address")
+    if(topic === 'Select')
+        errors.push('your topic')
+    if(errors.length == 0) {
+        const formData = {
+            "name": name,
+            "email": email,
+            "topic": topic,
+            "message": message,
+        }
+    
+        var jqxhr = $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json",
+            data: formData
+        }).then(() => {
+                $("#form-errors").html('Thank you for your message! We will get back to you as soon as possible.')
+                $("#form-errors").css('color', 'lightgreen')
+                $("#message_name").val('')
+                $("#message_email").val('')
+                $("#message_msg").val('')
+                console.log('success!')
+            }
+        ).catch(err =>
+            console.log(err)
+        )
+    } else {
+        $("#form-errors").html('Error: please enter the following: ' + errors.join(', '))
+        $("#form-errors").css('color', 'red')
+    }
+})
 
 
 

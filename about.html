@@ -93,10 +93,10 @@
       <h1 class="backtitle slidescale" id="backtitle2"><img src="images/splatter1.png"></h1>
       <div class="content">
         <div class="row" id="ourmission">
-          <div class="col-sm-4">
+          <div class="col-lg-4">
             <h1 class="title slideanim">Who Are We?</h1>
           </div>
-          <div class="col-sm-8">
+          <div class="col-lg-8">
             <p>We are a <i>licensed childcare institution</i> that provides part and full-time care for children ages 0-5 years old.</p>
             <p>Teachers must have <i>Early Childhood development units, CPR, and first aid certification</i>. We want our staff to be educated to provide the best environment for the children. </p>
             <p>We opened our doors in May of 2016, with the goal of creating a stress free environment and to foster a <i>love of life long learning</i>.</p>
@@ -104,24 +104,24 @@
         </div>
         <hr>
         <div class="row" id="ourphilosophy">
-          <div class="col-sm-4" id="ourphilophone">
+          <div class="col-lg-4" id="ourphilophone">
             <h1 class="title slideanim">Our Philosophy</h1>
           </div>
-          <div class="col-sm-8">
+          <div class="col-lg-8">
             <p>We utilize a <i>play-based</i> approach to learning. Children have an innate set of interests that can be used to stimulate learning through teacher-guided scaffolding, or independently.</p>
             <p>We hope to nurture your child into a <a href="https://www.youtube.com/watch?time_continue=2&v=MMmOLN5zBLY">Compound Bilingual</a> through our Spanish Immersion program that targets language acquisition during critical periods of brain development, when plasticity is the highest.</p>
             <p>We celebrate every child's diversity and enable them to exercise key developmental areas through our <i>language center, Literacy area, Art Center, Manipulative, Science center and movement area</i>.</p>
           </div>
-          <div class="col-sm-4" id="ourphilo">
+          <div class="col-lg-4" id="ourphilo">
             <h1 class="title slideanim">Our Philosophy</h1>
           </div>
         </div>
         <hr>
         <div class="row" id="ourhistory">
-          <div class="col-sm-4">
+          <div class="col-lg-4">
             <h1 class="title slideanim">Our Approach</h1>
           </div>
-          <div class="col-sm-8">
+          <div class="col-lg-8">
             <p>Our program uses <i>developmentally appropriate curriculum</i> that takes into account student's skills, abilities, interests, and future projection to further their progression with as much natural ease as possible.</p>
             <p>Our job is to facilitate their learning and create a warm, nurturing and welcoming environment to foster <i>curiousity</i> and <i>exploration</i>.</p>
             <p>We also strive to accommodate and promote <i>all types</i> of intelligences.</p>
@@ -129,10 +129,10 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-lg-6">
               <a class="butt slideanim" href="https://www.yelp.com/biz/mi-escuelita-cupertino-2?osq=mi+escuelitas">Check Us Out On Yelp <i class="fas fa-angle-right"></i></a>
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-6">
               <a class="butt slideanim" href="register">Register Today <i class="fas fa-angle-right"></i></a>
             </div>
         </div>
@@ -140,18 +140,18 @@
     </div>
     <div id="footer">
         	<div class="row" id="footerlinks">
-        		<div class="col-sm-3">
+        		<div class="col-lg-3">
         		</div>
-        		<div class="col-sm-2">
+        		<div class="col-lg-2">
         			<a href="about">About Us</a>
         		</div>
-        		<div class="col-sm-2">
+        		<div class="col-lg-2">
         			<a href="register">Register Today</a>
         		</div>
-        		<div class="col-sm-2">
+        		<div class="col-lg-2">
         			<a href="contact">Contact Us</a>
         		</div>
-        		<div class="col-sm-3"></div>
+        		<div class="col-lg-3"></div>
         	</div>
         	<div class="row" id="samyang">
         		<p>&copy; Mi Escuelita 2019. The images, logo and contents of this website are the sole property of " Mi Escuelita" and may not be reproduced without the express consent of the company.</p>
@@ -162,7 +162,7 @@
 
   <script>
     resize = () => {
-        if($(window).width() > 768) {
+        if($(window).width() > 1100) {
             $("#backtitle3").css('top', $("#ourmission .title").offset().top - $("#phbody").offset().top - 50);
             $("#backtitle2").css('top', $("#ourhistory .title").offset().top - $("#phbody").offset().top - 50);
             $("#backtitle1").css('top', $("#ourphilosophy").offset().top - $("#phbody").offset().top - 30);
@@ -210,10 +210,26 @@
     })
     $(document).ready(function() { 
       slideAnim()
+      $("#programs").mouseenter(function(event) {
+        $("#programdropdown").slideDown("fast");
+        $("#programs .navig-link .fa-angle-down").css('transform', 'rotate(180deg)');
+      })
+      $("#programs").mouseleave(function(event) {
+          $("#programdropdown").slideUp("fast");
+          $("#programs .navig-link .fa-angle-down").css('transform', 'rotate(0deg)');
+      })
     })
     window.addEventListener('resize', function(event){
       resize()
     })
+    function rotate(x) {
+      x.classList.toggle("change")
+      $("#phonenavlinks").slideToggle()
+    }
+    function toggleProg() {
+      $("#programdropdown2").slideToggle("fast")
+      $("#programs2 .navig-link2 .fa-angle-down").toggleClass('rotate180')
+    }
   </script>
 </body>
 </html>
